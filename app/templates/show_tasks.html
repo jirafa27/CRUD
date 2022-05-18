@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{%for d in dict_of_tasks.keys()%}
+    <div class="bg-light p-5 rounded mt-3" style="width: 500px; margin-left: auto; margin-right: auto;">
+        <h5>{{d}}</h5>
+        <h6 class="lead">{{dict_of_tasks[d]}}</h6>
+      </div>
+{%endfor%}
+
+{%endblock%}

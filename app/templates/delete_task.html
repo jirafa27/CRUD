@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<main class="form-signin">
+<form action="" method="post" name="crate_task">
+    <h1 class="h3 mb-3 fw-normal">Choose task by it's creation time</h1>
+    <select id="created2" onchange="func()">
+        <option style="display:none"></option>
+    {% for o in form.created.choices %}
+     <option value="{{ o[0] }}">{{ o[1] }}</option>
+    {% endfor %}
+    </select>
+    <h1 class="h3 mb-3 fw-normal">Text of task</h1>
+    <h3 id="text_of_task">
+    </h3>
+    <div style="display:none">
+        {{form.created}}
+    </div>
+    <button class="btn btn-primary" type="submit">Delete</button>
+</form>
+<script>
+function func() {
+let created = document.getElementById('created2')
+document.getElementById('text_of_task').innerHTML = created.value.split('~~')[1].toString();
+document.getElementById('created').value = created.value
+}
+</script>
+
+
+
+
+
+{%endblock%}

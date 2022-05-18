@@ -1,0 +1,34 @@
+{%extends "base.html"%}
+{%block content%}
+<main class="form-signin">
+<form action="" method="post" name="create_task">
+
+    <h1 class="h3 mb-3 fw-normal">Enter your task here</h1>
+    <div class="t">
+         {{form.text}}
+    </div>
+    <div style="display:none">
+        {{form.created}}
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
+
+</main>
+<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js?v=513" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<style>
+#text
+{
+ height: 300px;
+ width: 300px
+}
+</style>
+<script>
+function func() {
+let created = document.getElementById('created2')
+document.getElementById('text').value = created.value.split('~~')[1].toString();
+document.getElementById('created').value = created.value
+}
+</script>
+
+{%endblock%}
+

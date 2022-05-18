@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%block content%}
+<h1>
+
+    Task time
+    </h1>
+    {{created}}
+<h1>
+    Text of task
+</h1>
+<h5>
+    {{text}}
+</h5>
+<h1>
+    {%if method=='CREATE'%}
+    successfully created
+    {%elif method=='UPDATE'%}
+    successfully updated
+    {%else%}
+    successfully deleted
+    {%endif%}
+</h1>
+
+
+{%endblock%}
