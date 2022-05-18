@@ -5,5 +5,5 @@ import redis
 app = Flask(__name__)
 app.config.from_object('config')
 Bootstrap(app)
-red = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
+redisCache = redis.StrictRedis(host='127.0.0.1', port=6379, db=0)
 from app import views
